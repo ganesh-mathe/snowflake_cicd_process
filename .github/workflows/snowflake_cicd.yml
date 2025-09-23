@@ -36,7 +36,7 @@ jobs:
         
         runs_on:
         echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-        python --version
+        python3 --version
         echo "step 1: Installing Schemachange"
         pip install Schemachange
 
