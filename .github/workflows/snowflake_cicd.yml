@@ -34,7 +34,7 @@ jobs:
           SF_URL: ${{ secrets.SF_URL }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
         
-        runs_on:
+        run:
         echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
         python3 --version
         echo "step 1: Installing Schemachange"
