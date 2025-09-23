@@ -12,7 +12,7 @@ on:
 
 jobs:
   snowflake-cicd-showcase:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       # checks out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -34,9 +34,9 @@ jobs:
           SF_URL: ${{ secrets.SF_URL }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
         
-        run:
+        runs-on:
         echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-        python3 --version
+        python --version
         echo "step 1: Installing Schemachange"
         pip install Schemachange
 
