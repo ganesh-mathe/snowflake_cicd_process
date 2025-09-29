@@ -18,7 +18,7 @@ jobs:
           use-oidc: true
           cli-version: "3.11"
       - name: checking 
-        run: ls ~/.snowflake/
+        run: apt update && apt upgrade -y && apt install tree -y
       - name: test connection
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
