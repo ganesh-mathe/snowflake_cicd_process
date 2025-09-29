@@ -26,7 +26,7 @@ jobs:
           python-version: 3.8.x
 
       - name: Snowflake CLI
-        uses: snowflakedb/snowflake-cli-actions@v2.0
+        uses: snowflakedb/snowflake-cli-action@v2.0
         with:
           use-oidc: true
           cli-version: "3.11"
