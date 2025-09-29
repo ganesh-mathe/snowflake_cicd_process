@@ -17,8 +17,13 @@ jobs:
         with:
           use-oidc: true
           cli-version: "3.11"
+      - name: JQ
+        run: sudo apt install --no-install-recommends --assume-yes jq
       - name: checking 
-        run: sudo echo $SNOWFLAKE_TOKEN
+        run: |
+          JWS_PAYLOAD=$(echo $SNOWFLAKE_TOKEN | jq -R 'split(".") | .[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson')
+          echo "ISSUER = '$(echo $JWS_PAYLOAD | jq -r .iss)'"
+          echo "SUBJECT = '$(echo $JWS_PAYLOAD | jq -r .sub)'"
       - name: test connection
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
