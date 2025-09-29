@@ -18,7 +18,7 @@ jobs:
           use-oidc: true
           cli-version: "3.11"
       - name: checking 
-        run: sudo tree -a
+        run: sudo tree -a ~/
       - name: test connection
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
