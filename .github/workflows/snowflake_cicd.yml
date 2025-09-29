@@ -17,7 +17,7 @@ jobs:
         with:
           use-oidc: true
           cli-version: "3.11"
-      - name: JQ
+      - name: JQ installation
         run: sudo apt install --no-install-recommends --assume-yes jq
       - name: checking 
         run: |
