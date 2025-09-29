@@ -18,7 +18,7 @@ jobs:
           use-oidc: true
           cli-version: "3.11"
       - name: checking 
-        run: sudo cat ~/.config/snowflake/config.toml
+        run: sudo echo $SNOWFLAKE_TOKEN
       - name: test connection
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
