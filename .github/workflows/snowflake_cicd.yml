@@ -35,6 +35,7 @@ jobs:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
         run: snow connection test -x
 
+
       # - name: Run schemachange
       #   env:
       #     SF_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
